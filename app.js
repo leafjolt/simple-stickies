@@ -75,6 +75,11 @@ Vue.createApp({
             // 2. If confirmed:
             //    - Clear the stickies array
             //    - Remove the localStorage item using this.storageKey
+            let confirmed = confirm("Dlete all notes?");
+            if (confirmed) {
+                this.stickies = [];
+                localStorage.removeItem(this.storageKey);
+            }
         },
 
         // ================================
@@ -97,7 +102,7 @@ Vue.createApp({
             //
             // Must use:
             // JSON.stringify(...)
-            localStorage.setItem("stickies", JSON.stringify(this.stickies));
+            localStorage.setItem(this.storageKey, JSON.stringify(this.stickies));
         },
 
         loadFromStorage() {
@@ -112,7 +117,7 @@ Vue.createApp({
             // - Call this method from mounted().
             // - Remove hard-coded notes from Commit 2.
 
-            this.stickies = JSON.parse(localStorage.getItem("stickies")) ?? [];
+            this.stickies = JSON.parse(localStorage.getItem(this.storageKey)) ?? [];
         }
     },
 
