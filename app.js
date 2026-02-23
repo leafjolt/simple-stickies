@@ -30,6 +30,10 @@ Vue.createApp({
         //
         // In Commit 4:
         // - Replace this with a call to loadFromStorage().
+        this.stickies = [
+            { id: 1, text: "Test note 1" },
+            { id: 2, text: "Test note 2" }
+        ];
     },
 
     methods: {
