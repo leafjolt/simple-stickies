@@ -62,7 +62,7 @@ Vue.createApp({
             //
             // Use Array.filter()
             // Reassign the result back to this.stickies
-            this.stickies = this.stickies.filter(s => s.id != id);
+            this.stickies = this.stickies.filter(s => s.id !== id);
         },
 
         // ================================
