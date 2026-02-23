@@ -39,6 +39,6 @@ It returns a new list, so we must assign it back to this.stickies to update the 
 Using !== keeps all the other elements, but removes the one element matching the id that we're removing.
 
 ## Q5 - Architecture decision
-## Why is saving implemented in a separate method ( `saveToStorage` ) instead of writing localStorage code directly in the watcher?
+### Why is saving implemented in a separate method ( `saveToStorage` ) instead of writing localStorage code directly in the watcher?
 
 Saving is implemented in a separate method abstracs the localStorage saving logic into its own spot, keeping the watcher clean and just there for watching the changes and calling the method when necessary. If we ever need to change saving logic, it can just be done in the method and the watcher will automatically handle it correctly.
